@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "485898284953",
+    "project_id": "generalandroidapp",
+    "storage_bucket": "generalandroidapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485898284953:android:25a05af8f4ee26b860ed08",
+        "android_client_info": {
+          "package_name": "com.example.eshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485898284953-jaooidgf5f9c8akgd2ume6plolotc10u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eshop",
+            "certificate_hash": "2a8d8b267167e48fbe55c5cb605349615ffda24c"
+          }
+        },
+        {
+          "client_id": "485898284953-n9ukeiq82ehfm4p7imhn7qprfnhki89l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD31ko1G0nivBwJOI497ijXKHdGtLJKoUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485898284953-n9ukeiq82ehfm4p7imhn7qprfnhki89l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
