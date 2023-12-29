@@ -15,12 +15,12 @@ E-commerce android application that makes user buy his food easily.
 - Ability to edit personal information
 
 ## Tools used
--Room
--Dagger Hilt
--Retrofit 
--Glide 
--Google Maps SDK 
--Stripe Payment SDK 
--Firebase 
+- Room
+- Dagger Hilt
+- Retrofit 
+- Glide 
+- Google Maps SDK 
+- Stripe Payment SDK 
+- Firebase 
 
 # Screenshots
