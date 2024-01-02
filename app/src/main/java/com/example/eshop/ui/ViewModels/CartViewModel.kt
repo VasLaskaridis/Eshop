@@ -26,9 +26,9 @@ constructor(
     fun deleteProductFromCart(productModel: Product){
         viewModelScope.launch(Dispatchers.IO) {
             shopRepository.deleteProductFromUserCart(productModel.id)
-            withContext(Dispatchers.Main){
-                getAllCartProducts()
-            }
+//            withContext(Dispatchers.Main){
+//                getAllCartProducts()
+//            }
         }
     }
 

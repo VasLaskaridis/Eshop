@@ -34,7 +34,6 @@ constructor(
     private val favoriteDao: FavoriteDao,
     @ApplicationContext private val context: Context
 ) {
-
     private val errorMessage by lazy { context.getString(R.string.errorMessage) }
     private val userUid by lazy { firebaseAuth.uid!! }
     private val cartCollection by lazy {
@@ -86,6 +85,7 @@ constructor(
                     .get()
                     .await()
             list.add(transformer.convertToMainShopItem(it,transformer.convertDocumentToProductList(products.documents)))
+
         }
         return list
     }

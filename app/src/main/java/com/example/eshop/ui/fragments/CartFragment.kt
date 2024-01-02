@@ -1,6 +1,7 @@
 package com.example.eshop.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,7 @@ class CartFragment : Fragment() {
         cartAdapter.setCartProductListenerDelete(object: CartAdapter.CartProductListener{
             override fun onProductDelete(product: Product) {
                 cartViewModel.deleteProductFromCart(product)
+                cartViewModel.getAllCartProducts()
             }
         })
         binding.cartRv.adapter=cartAdapter
@@ -62,7 +64,6 @@ class CartFragment : Fragment() {
                     if (cartProducts.data == null || cartProducts.data.isEmpty()) {
                         binding.emptyProductsImg.visibility=View.VISIBLE
                         binding.cartContainer.visibility=View.GONE
-
                     } else {
                         cartAdapter.setCartProductList(cartProducts.data)
                         binding.emptyProductsImg.visibility=View.GONE
