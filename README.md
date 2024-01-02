@@ -27,16 +27,18 @@ E-commerce android application that makes user buy his food easily.
 - Firebase 
 
 # Screenshots
-<img src="screenshots/Screenshot_1.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_2.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_3.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_4.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_5.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_6.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_7.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_8.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_9.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_10.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_11.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_12.png" alt="image" width="30%">
-<img src="screenshots/Screenshot_13.png" alt="image" width="30%">
+<p float="left">
+  <img src="screenshots/Screenshot_1.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_2.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_3.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_4.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_5.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_6.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_7.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_8.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_9.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_10.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_11.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_12.png" alt="image" width="200">
+  <img src="screenshots/Screenshot_13.png" alt="image" width="200">
+</p>
