@@ -94,6 +94,7 @@ import org.json.JSONObject
                      userLocation=userInfoModel!!.userLocationName
                      binding.checkoutTotalCostTv.text=totalCost.toString()+"$"
                      binding.userLocationForOrderTv.text=userLocation
+                     binding.userNameForOrderTv.text=userInfoModel!!.userName
                  }
                  is Resource.Error -> {
                      Toast.makeText(requireContext(), userInfo.msg, Toast.LENGTH_SHORT).show()

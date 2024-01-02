@@ -39,7 +39,7 @@ class MyTransformer {
     fun convertDocumentToProductList(document: List<DocumentSnapshot>): MutableList<Product> {
         val list = mutableListOf<Product>()
         document.forEach { map ->
-            list.add(
+            val product=
                 Product(
                     map["id"].toString(),
                     map["name"].toString(),
@@ -50,11 +50,11 @@ class MyTransformer {
                     map["detail"].toString(),
                     map["protein"].toString().toDouble(),
                     map["price"].toString().toDouble(),
-                    map["quantity"].toString().toDouble().toInt(),
+                    map["quantity"].toString().toInt(),
                     map["quantityType"].toString(),
                     map["category"].toString(),
                 )
-            )
+            list.add(product)
         }
         return list
     }
@@ -89,8 +89,11 @@ class MyTransformer {
     fun convertMapToCategoryItem(map: Map<String, Any>): CategoryItem =
         CategoryItem(map["id"].toString(), map["name"].toString(), map["image"].toString())
 
-    fun convertToMainShopItem(categoryItem:CategoryItem,products: MutableList<Product>): MainShopItem =
-        MainShopItem(categoryItem.id, categoryItem.name, 50, false, products)
+    fun convertToMainShopItem(categoryItem:CategoryItem,products: MutableList<Product>): MainShopItem {
+        val item = MainShopItem(categoryItem.id, categoryItem.name, 50, false, products)
+        return item
+    }
+
 
     fun convertDocumentListToMainShopList(doc: MutableList<DocumentSnapshot>): MutableList<MainShopItem> {
         val shopList = mutableListOf<MainShopItem>()

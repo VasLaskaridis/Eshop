@@ -1,6 +1,7 @@
 package com.example.eshop.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.eshop.R
 import com.example.eshop.db.Product
+import java.text.DecimalFormat
 
 class CartAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
@@ -27,7 +29,7 @@ class CartAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>()
         super.onAttachedToRecyclerView(recyclerView)
         context = recyclerView.getContext()
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.getContext())
         var itemView: View = inflater.inflate(R.layout.cart_item_layout, parent, false)
         val viewHolder = CartViewHolder(itemView)
@@ -45,17 +47,15 @@ class CartAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
         cartItemHolder.productQuantityMinus_img.setOnClickListener(View.OnClickListener {
             cartItemHolder.productQuantity_et.setText((currentCartItem.quantity-1).toString())
+            onQuantityTextChanged(cartItemHolder.productQuantity_et.text, currentCartItem, cartItemHolder.cartProductPrice_tv)
         })
         cartItemHolder.productQuantityPlus_img.setOnClickListener(View.OnClickListener {
             cartItemHolder.productQuantity_et.setText((currentCartItem.quantity+1).toString())
+            onQuantityTextChanged(cartItemHolder.productQuantity_et.text, currentCartItem, cartItemHolder.cartProductPrice_tv)
         })
         cartItemHolder.productQuantity_et.setText(currentCartItem.quantity.toString())
-        cartItemHolder.productQuantity_et.doAfterTextChanged {
-            onQuantityTextChanged(cartItemHolder.productQuantity_et.text, currentCartItem, cartItemHolder.cartProductPrice_tv)
-        }
 
         cartItemHolder.cartProductPrice_tv.text=(currentCartItem.price* currentCartItem.quantity).toString()+"$"
-
     }
 
 
@@ -84,11 +84,14 @@ class CartAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>()
         if (quantity.isNotEmpty()) {
             val quantityNumber = quantity.toDouble().toInt()
             if (quantityNumber > 0) {
-                val product = purchasedProductsList.single { it.id == product.id }
-                product.quantity = quantityNumber
-                priceTextView.text =""+(product.price * quantityNumber)+"$"
+               // if(product in purchasedProductsList) {
+                    val product = productsList!!.single { it.id == product.id }
+                    product.quantity = quantityNumber
+                    val price = product.price * quantityNumber
+                    priceTextView.text = "" + DecimalFormat("##.##").format(price) + "$"
+                //}else{}
             }
-        }
+       }
     }
 
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

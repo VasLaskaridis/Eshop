@@ -1,313 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.SpecificProductFragment">
 
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:background="@null"
-        android:elevation="8dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:padding="8dp"
-        android:src="@drawable/ic_arrow_back"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/shareProduct_imgbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:background="@null"
-        android:elevation="8dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:padding="8dp"
-        android:src="@drawable/ic_share"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".1" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/card_view_shape_bottom_corners"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="2dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:elevation="8dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+            android:id="@+id/shareProduct_imgbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@null"
+            android:elevation="8dp"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
+            android:id="@+id/guideline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".2" />
+            app:layout_constraintGuide_percent=".1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_view_shape_bottom_corners"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".2" />
+
+            <ImageView
+                android:id="@+id/specificProductImage_img"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:elevation="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guideline5" />
+
+            <ImageView
+                android:id="@+id/specificProductShadow_img"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="15dp"
+                android:alpha=".1"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/specificProductImage_img"
+                app:layout_constraintEnd_toEndOf="@id/specificProductImage_img"
+                app:layout_constraintStart_toStartOf="@+id/specificProductImage_img"
+                app:layout_constraintTop_toTopOf="@+id/specificProductImage_img" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/productName_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/filledBlack"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+        <TextView
+            android:id="@+id/productQuantity_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/lightBlack"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productName_tv" />
 
         <ImageView
-            android:id="@+id/specificProductImage_img"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:elevation="8dp"
+            android:id="@+id/favoriteProduct_img"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_favorite_2"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/productQuantityContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productQuantity_tv">
+
+            <ImageView
+                android:id="@+id/productQuantityMinus_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_minus" />
+
+            <EditText
+                android:id="@+id/productQuantity_et"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/card_view_shape"
+                android:gravity="center"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/productQuantityPlus_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:src="@drawable/ic_plus" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/productPrice_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textStyle="bold"
+            android:theme="@style/bigTextTheme"
+            app:layout_constraintBottom_toBottomOf="@+id/productQuantityContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/productQuantityContainer"
+            tools:text="5.99$" />
+
+        <TextView
+            android:id="@+id/textDetail_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Product detail"
+            android:textStyle="bold"
+            android:theme="@style/textTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productQuantityContainer" />
+
+        <TextView
+            android:id="@+id/textProductDetail_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/lightBlack"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDetail_tv" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/addToBasket_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textProductDetail_tv">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/productCalories_tv"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    tools:text="No info"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Cal"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/productFat_tv"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    tools:text="170g"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Fat"
+                    tools:text="Fat"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/productProtein_tv"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    tools:text="170g"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Protein"
+                    tools:text="Protein"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/productCarb_tv"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    tools:text="170g"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Carb"
+                    android:textColor="@color/black"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addToBasket_btn"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/button_style"
+            android:text="Add to cart"
+            android:theme="@style/buttonTheme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/guideline5" />
-
-        <ImageView
-            android:id="@+id/specificProductShadow_img"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="15dp"
-            android:alpha=".1"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@id/specificProductImage_img"
-            app:layout_constraintEnd_toEndOf="@id/specificProductImage_img"
-            app:layout_constraintStart_toStartOf="@+id/specificProductImage_img"
-            app:layout_constraintTop_toTopOf="@+id/specificProductImage_img" />
-
-
+            app:layout_constraintTop_toBottomOf="@+id/textProductDetail_tv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/productName_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textColor="@color/filledBlack"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-    <TextView
-        android:id="@+id/productQuantity_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/lightBlack"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productName_tv" />
-
-    <ImageView
-        android:id="@+id/favoriteProduct_img"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
-        android:padding="8dp"
-        android:src="@drawable/ic_favorite_2"
-        app:layout_constraintBottom_toBottomOf="@+id/productQuantity_tv"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <LinearLayout
-        android:id="@+id/productQuantityContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productQuantity_tv">
-
-        <ImageView
-            android:id="@+id/productQuantityMinus_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:src="@drawable/ic_minus" />
-
-        <EditText
-            android:id="@+id/productQuantity_et"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:background="@drawable/card_view_shape"
-            android:gravity="center"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/productQuantityPlus_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:src="@drawable/ic_plus" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/productPrice_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textStyle="bold"
-        android:theme="@style/bigTextTheme"
-        app:layout_constraintBottom_toBottomOf="@+id/productQuantityContainer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/productQuantityContainer"
-        tools:text="5.99$" />
-
-    <TextView
-        android:id="@+id/textDetail_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Product detail"
-        android:textStyle="bold"
-        android:theme="@style/textTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productQuantityContainer" />
-
-    <TextView
-        android:id="@+id/textProductDetail_tv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:textColor="@color/lightBlack"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDetail_tv" />
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/addToBasket_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textProductDetail_tv">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/productCalories_tv"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                tools:text="No info"
-                android:textStyle="bold"
-                android:textColor="@color/blue"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Cal"
-                android:textColor="@color/black"
-                android:textSize="9sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/productFat_tv"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                tools:text="170g"
-                android:textStyle="bold"
-                android:textColor="@color/blue"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Fat"
-                tools:text="Fat"
-                android:textColor="@color/black"
-                android:textSize="9sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/productProtein_tv"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                tools:text="170g"
-                android:textStyle="bold"
-                android:textColor="@color/blue"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Protein"
-                tools:text="Protein"
-                android:textColor="@color/black"
-                android:textSize="9sp"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/productCarb_tv"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                tools:text="170g"
-                android:textStyle="bold"
-                android:textColor="@color/blue"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Carb"
-                android:textColor="@color/black"
-                android:textSize="9sp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/addToBasket_btn"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_margin="8dp"
-        android:background="@drawable/button_style"
-        android:text="Add to cart"
-        android:theme="@style/buttonTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textProductDetail_tv" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
